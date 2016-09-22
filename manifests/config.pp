@@ -32,7 +32,7 @@ class etcd::config {
       owner   => 'root',
       group   => 'root',
       mode    => '0755',
-      content => template("${module_name}/etc/etcd.init"),
+      content => template("${module_name}/etc/etcd.init.erb"),
     }
   }
 }

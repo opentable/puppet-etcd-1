@@ -256,7 +256,9 @@ class etcd (
   # logging
   $debug                       = $etcd::params::debug,
   $log_package_levels          = $etcd::params::log_package_levels,
-  $journald_forward_enable     = $etcd::params::journald_forward_enable
+  $journald_forward_enable     = $etcd::params::journald_forward_enable,
+  $etcd_user                   = 'etcd',
+  $etcd_group                  = 'etcd'
 ) inherits etcd::params {
   validate_integer([
     $snapshot_counter,

@@ -40,6 +40,8 @@ start() {
       chown ${user}:${user} ${logfile}
     fi
 
+    echo -m $"<%= @advertise_client_urls -%>"
+
     echo -n $"Starting ${name}: "
     daemon --user ${user} --pidfile=${pidfile} "nohup ${exec} ${ETCD_OPTIONS} &>>${logfile} &"
     retval=$?
